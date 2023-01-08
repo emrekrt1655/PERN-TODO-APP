@@ -1,0 +1,44 @@
+@import "../../global.scss";
+.title2 {
+  color: darkblue;
+  text-align: center;
+  width: 100%;
+  padding: 20px;
+
+  @include mobile {
+    display: none;
+  }
+
+}
+
+.todoListContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  justify-content: space-evenly;
+  align-items: center;
+  height: calc(100vh - 80px);
+  overflow: hidden;
+
+  &__listContainer {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 10px;
+    height: 70%;
+    overflow-y: scroll;
+    padding-right: 25px;
+    box-sizing: content-box;
+
+    @include mobile {
+    justify-content: flex-end;
+  }
+
+  }
+}
+
+.nightText {
+  color: $secondColor;
+}

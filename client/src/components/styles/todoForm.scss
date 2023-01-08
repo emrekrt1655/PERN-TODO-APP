@@ -1,0 +1,32 @@
+@import "../../global.scss";
+
+.todoForm {
+  width: 80%;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  input {
+    padding: 10px;
+    border-radius: 10px;
+    background-color: $mainColor;
+    color: $secondColor;
+    border: 1px solid $mainColor;
+    box-shadow: 10px 10px 10px $mainColor;
+    width: 60%;
+  }
+
+  ::placeholder {
+    color: $secondColor;
+  }
+
+  .nightInput {
+    background-color: $secondColor;
+    color: $mainColor;
+    border: 1px solid $secondColor;
+  }
+  .nightInput::placeholder {
+    color: $mainColor;
+  }
+}

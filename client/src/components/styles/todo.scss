@@ -1,0 +1,87 @@
+@import "../../global.scss";
+
+.singleTodo {
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+  margin: 5px;
+  padding: 5px;
+
+  &__todoText {
+    margin-left: 5px;
+    color: $mainColor;
+    cursor: pointer;
+
+    @include mobile {
+      text-align: left;
+    }
+
+  }
+
+  &__todoDoneText {
+    margin-left: 5px;
+    color: $mainColor;
+    text-decoration: line-through;
+    cursor: pointer;
+
+    @include mobile {
+      text-align: left;
+    }
+
+  }
+
+  &__iconContainer {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    justify-content: space-between;
+
+    svg,
+    img {
+      margin-left: 10px;
+      color: $mainColor;
+    }
+  }
+}
+
+.editText {
+  border: 0;
+}
+
+.editText:focus {
+  outline: none;
+}
+
+.nighty {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 118, 20, 1) 0%,
+    rgba(255, 84, 17, 1) 100%
+  );
+}
+
+.nighty:nth-child(4n + 1) {
+  background: linear-gradient(
+    90deg,
+    rgba(93, 12, 255, 1) 0%,
+    rgba(155, 0, 250, 1) 100%
+  );
+}
+
+.nighty:nth-child(4n + 2) {
+  background: linear-gradient(
+    90deg,
+    rgba(255, 12, 241, 1) 0%,
+    rgba(250, 0, 135, 1) 100%
+  );
+}
+
+.nighty:nth-child(4n + 3) {
+  background: linear-gradient(
+    90deg,
+    rgba(20, 159, 255, 1) 0%,
+    rgba(17, 122, 255, 1) 100%
+  );
+}
