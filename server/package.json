@@ -4,13 +4,17 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "ts-node-dev index.ts"
+    "start": "ts-node-dev index.ts",
+    "open": "npx cypress open",
+    "test": "npx cypress run"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "@prisma/client": "^4.6.1",
+    "cypress": "^9.4.1",
+    "cypress-postgresql": "^1.0.8",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "prisma": "^4.6.1"
