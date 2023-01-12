@@ -46,3 +46,20 @@ export interface IResponseLogin {
   export interface IUserResponse {
     body: IUsersBody;
   }
+
+export interface ITodo {
+  todoId?: string;
+  text: string;
+  todoUserId?: string;
+  todoDone: string;
+}
+
+  export interface ITodosBody {
+    status: string;
+    message: string;
+    data: ITodo[]
+  }
+
+  export interface ITodoResponse {
+    body: ITodosBody;
+  }
