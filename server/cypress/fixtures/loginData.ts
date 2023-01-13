@@ -2,7 +2,7 @@ import { ILoginData } from "../support/interfaces";
 
 export const loginData: ILoginData[] = [
   {
-    email: "test1@test.com",
+    email: "test0@test.com",
     password: "test1234",
   },
   {

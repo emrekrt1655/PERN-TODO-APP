@@ -2,8 +2,8 @@ import { IRegisterData } from "../support/interfaces";
 
 export const registerData: IRegisterData[] = [
   {
-    userName: "testUser1",
-    email: "test1@test.com",
+    userName: "testUser0",
+    email: "test0@test.com",
     password: "test1234",
   },
   {
@@ -22,7 +22,7 @@ export const registerData: IRegisterData[] = [
     password: "test1234",
   },
   {
-    userName: "updatedtestUser5",
+    userName: "testUser5",
     email: "test5@test.com",
     password: "test1234",
   },
