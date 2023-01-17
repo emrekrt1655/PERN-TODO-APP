@@ -31,7 +31,7 @@ const Register = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(register(userRegister)).then(() => navigate("/login"))
+    dispatch(register(userRegister))
   };
 
   return (
