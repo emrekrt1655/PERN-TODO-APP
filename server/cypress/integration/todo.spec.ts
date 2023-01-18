@@ -79,7 +79,7 @@ describe("Backend Login API Test Suite", () => {
           todoId: this.todoId,
           todoUserId: this.userId,
           text: todoData[0].text + new Date(),
-          todoDone: todoData[0].todoDone === "todo" ? "doen" : "todo",
+          todoDone: todoData[0].todoDone === "todo" ? "done" : "todo",
         },
       };
       cy.request(options).then((response: any) => {

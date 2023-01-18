@@ -12,8 +12,10 @@ const prisma = new PrismaClient();
 const todoControllers = {
   getTodos: async (req: Request, res: Response) => {
     try {
+      const { todoUserId } = req.params;
       const todos: ITodo[] = await prisma.todo.findMany({
-        where: { todoUserId: req.params.userId },
+
+        where: { todoUserId: todoUserId },
       });
       return res.status(200).json({
         status: "success",
