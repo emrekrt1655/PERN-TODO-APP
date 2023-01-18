@@ -1,5 +1,10 @@
 export const registerData = {
-    userName: "testuser"+ new Date().getMilliseconds() ,
-    email:  new Date().getTime()+"@test.com",
-    password: "test1234"
-}
+  userName: "testuser" + new Date().getMilliseconds(),
+  email: new Date().getTime() + "@test.com",
+  password: "test1234",
+};
+
+export const loginData = {
+  email: "test1@test.com",
+  password: "test1234",
+};
