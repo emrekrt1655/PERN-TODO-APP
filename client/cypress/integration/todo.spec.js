@@ -14,7 +14,7 @@ describe("Todo funtions Test Suite", function () {
     });
   });
 
-  it("todo test funtions it should login", function () {
+  beforeEach("test it should logins to the api", function () {
     cy.visit(Cypress.env("url_Frontend") + "login");
     cy.fillForm("email", loginData.email);
     cy.fillForm("password", loginData.password);
@@ -23,12 +23,19 @@ describe("Todo funtions Test Suite", function () {
       const successMsg = text.text();
       expect(successMsg.includes("Success")).to.be.true;
     });
+  });
+
+  it("todo test funtions it should login", function () {
     cy.visit(Cypress.env("url_Frontend"));
     cy.get("#text");
     cy.fillForm("text", todoData.text).type("{enter}");
     cy.get(".toast-header").then((text) => {
       const successMsg = text.text();
       expect(successMsg.includes("Success")).to.be.true;
+    });
+    cy.get(":nth-child(1) > .singleTodo__todoText").then((el) => {
+      const todoText = el.text();
+      expect(todoText).to.equal(todoData.text);
     });
   });
 });
