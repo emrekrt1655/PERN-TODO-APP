@@ -25,7 +25,7 @@ describe("Todo funtions Test Suite", function () {
     });
   });
 
-  it("todo test funtions it should login", function () {
+  it("should login create a todo", function () {
     cy.visit(Cypress.env("url_Frontend"));
     cy.get("#text");
     cy.fillForm("text", todoData.text).type("{enter}");
@@ -36,6 +36,43 @@ describe("Todo funtions Test Suite", function () {
     cy.get(":nth-child(1) > .singleTodo__todoText").then((el) => {
       const todoText = el.text();
       expect(todoText).to.equal(todoData.text);
+    });
+  });
+
+  it("should delete the todo", function () {
+    cy.visit(Cypress.env("url_Frontend"));
+    cy.get(":nth-child(1) > .singleTodo__todoText").then((el) => {
+      this.text = el.text();
+    });
+    cy.get(".todoListContainer__listContainer > :nth-child(1)").then((el) => {
+      cy.get("#delete").click();
+    });
+    cy.get(":nth-child(1) > .singleTodo__todoText").then((el) => {
+      expect(el.text()).not.to.equal(this.text);
+    });
+  });
+
+  it("should check and uncheck todo", function () {
+    cy.visit(Cypress.env("url_Frontend"));
+    cy.get(".todoListContainer__listContainer > :nth-child(1)").then((el) => {
+      cy.get("#done").click();
+    });
+
+    cy.get(".todoListContainer__listContainer > :last-child > #todoText").then(
+      (text) => {
+        const className = text[0].className;
+        expect(className.includes("todoDoneText")).to.be.true;
+        cy.get(
+          ".todoListContainer__listContainer > :last-child > .singleTodo__iconContainer > #done"
+        ).click();
+      }
+    );
+    cy.get(
+      ".todoListContainer__listContainer > :nth-child(1) > #todoText"
+    ).then((text) => {
+      const className = text[0].className;
+      cy.log(className);
+      expect(className.includes("todoText")).to.be.true;
     });
   });
 });
