@@ -75,4 +75,12 @@ describe("Todo funtions Test Suite", function () {
       expect(className.includes("todoText")).to.be.true;
     });
   });
+  
+  it("should edit a todo", function () {
+    cy.visit(Cypress.env("url_Frontend"));
+    cy.get(".todoListContainer__listContainer > :nth-child(1)").then((el) => {
+      cy.get("#edit").click();
+      cy.get(":nth-child(1) > #text").type(" updated").type("{enter}");
+    });
+  });
 });
